@@ -1,3 +1,5 @@
+![Banner](banner.png)
+
 # dm-data-tokenization-replacer
 Replaces sensitive data with unique, reversible tokens. Supports multiple tokenization methods (e.g., UUIDs, sequential IDs) and allows for the management of a token-to-value mapping for later de-tokenization. Takes CSV file as input. - Focused on Tools designed to generate or mask sensitive data with realistic-looking but meaningless values
 
