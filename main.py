@@ -152,9 +152,9 @@ def tokenize_data(
         raise
 
 
-def detokenize_data(input_file: str, output_file: str, token_map_file: str) -> None:
+def detokenize_data(input_file: str, output_file: str, token_map_file: str, tokenize_columns: list[str]) -> None:
     """
-    Detokenizes specified columns in a CSV file using a token map and saves the result to a new file.
+    Detokenizes the tokenized columns in a CSV file using a token map and saves the result to a new file.
     """
     token_map: Dict[str, str] = {}
     try:
@@ -181,8 +181,13 @@ def detokenize_data(input_file: str, output_file: str, token_map_file: str) -> N
             writer.writeheader()
 
             for row in reader:
-                for column in reader.fieldnames:
-                    if row[column] in token_map:
+                # Replace in the tokenized columns only. Sequential tokens are
+                # small integers ("1", "2", ...), so scanning every column
+                # rewrote unrelated cells that happened to hold the same
+                # string: a code column containing 1 came back as the SSN
+                # that token 1 mapped to.
+                for column in tokenize_columns:
+                    if column in row and row[column] in token_map:
                         row[column] = token_map[row[column]]
                 writer.writerow(row)
     except FileNotFoundError:
@@ -202,7 +207,7 @@ def main():
 
     try:
         if args.detokenize:
-            detokenize_data(args.input_file, args.output_file, args.token_map_file)
+            detokenize_data(args.input_file, args.output_file, args.token_map_file, args.tokenize_columns)
             logging.info(f"Data detokenized successfully. Output saved to '{args.output_file}'.")
         else:
             tokenize_data(
