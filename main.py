@@ -88,6 +88,12 @@ def tokenize_data(
     Tokenizes specified columns in a CSV file and saves the result to a new file.
     """
     token_map: Dict[str, str] = {}
+    # One map serves every tokenized column in the file. The same value in
+    # two different columns earns the same token, so equality leaks across
+    # columns: a reader can tell a name cell and a city cell hold the same
+    # string without holding the map. I keep the single map because it is
+    # what makes a value tokenize the same way everywhere it appears, and
+    # that trade should be written down where the map is created.
 
     # Read existing token map, if it exists
     if os.path.exists(token_map_file):
@@ -124,7 +130,12 @@ def tokenize_data(
                 for column in tokenize_columns:
                     if column in row:
                         original_value = row[column]
-                        # Check if the value already has a token assigned
+                        # This lookup walks the whole map for every cell,
+                        # and the generator below walks it again for a new
+                        # value. Honest cost: the run slows in proportion to
+                        # rows times distinct values. A reversed dictionary
+                        # would fix it, and keeping two maps in sync is the
+                        # kind of change I do not smuggle into this pass.
                         token = next((k for k, v in token_map.items() if v == original_value), None)
                         if token is None: #Create a new token if it does not exist
                             token = token_generator(original_value, token_map)
@@ -141,7 +152,11 @@ def tokenize_data(
         logging.error(f"An error occurred during tokenization: {e}")
         raise
 
-    # Write token map to file
+    # The map is written only after the output file has closed, and it is
+    # rewritten whole. That order has a sharp edge: a crash during the row
+    # loop leaves a partial output whose new tokens exist in no map, so
+    # those rows can never be detokenized. The map on disk always describes
+    # the last completed run, never the partial one.
     try:
         with open(token_map_file, "w", newline="") as csvfile:
             writer = csv.writer(csvfile)
@@ -187,6 +202,11 @@ def detokenize_data(input_file: str, output_file: str, token_map_file: str, toke
                 # string: a code column containing 1 came back as the SSN
                 # that token 1 mapped to.
                 for column in tokenize_columns:
+                    # A cell whose token is missing from the map passes
+                    # through unchanged, with no warning. Detokenizing with
+                    # the wrong map file therefore produces a plausible
+                    # looking file that is still tokenized, and nothing in
+                    # the output says which cells were left behind.
                     if column in row and row[column] in token_map:
                         row[column] = token_map[row[column]]
                 writer.writerow(row)
