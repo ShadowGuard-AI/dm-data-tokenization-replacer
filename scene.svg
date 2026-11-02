@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-label="Moon Dial of the Abbey Garden scene">
+  <rect width="1200" height="360" fill="#160e0b"/>
+  <!-- Far band: turret and wall, bells motionless, moonlight brightens and dims as cloud crosses -->
+  <rect x="0" y="96" width="1200" height="90" fill="#241813"/>
+  <g>
+    <rect x="986" y="18" width="110" height="82" fill="#281c16"/>
+    <polygon points="976,20 1041,-16 1106,20" fill="#1a120e"/>
+    <rect x="1000" y="34" width="82" height="58" fill="#100a08"/>
+    <polygon points="1022,84 1038,84 1034,56 1026,56" fill="#c6d0dc"/>
+    <polygon points="1052,84 1068,84 1064,56 1056,56" fill="#c6d0dc"/>
+  </g>
+  <g fill="#0c0706" stroke="#46382e" stroke-width="2">
+    <rect x="60" y="122" width="44" height="58" rx="20"/>
+    <rect x="240" y="122" width="44" height="58" rx="20"/>
+    <rect x="420" y="122" width="44" height="58" rx="20"/>
+    <rect x="600" y="122" width="44" height="58" rx="20"/>
+    <rect x="780" y="122" width="44" height="58" rx="20"/>
+  </g>
+  <rect x="880" y="122" width="44" height="58" rx="20" fill="#ff2e88">
+    <animate attributeName="opacity" values="1;0.72;1" dur="9s" repeatCount="indefinite"/>
+  </rect>
+  <ellipse cx="300" cy="30" rx="150" ry="20" fill="#c6d0dc" opacity="0.10">
+    <animate attributeName="cx" values="180;1080;180" dur="36s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.05;0.22;0.05" dur="36s" repeatCount="indefinite"/>
+  </ellipse>
+  <!-- Middle band: garden path, keeper walks the path once carrying lantern and rattle, halts beside the dial -->
+  <rect x="0" y="238" width="1200" height="122" fill="#1e1511"/>
+  <polygon points="520,360 610,360 585,244 548,244" fill="#604a42"/>
+  <ellipse cx="330" cy="282" rx="180" ry="34" fill="#2c211a"/>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="760 0; 470 0; 470 0" keyTimes="0;0.45;1" dur="14s" repeatCount="indefinite"/>
+    <rect x="0" y="196" width="16" height="52" rx="6" fill="#c6d0dc"/>
+    <circle cx="8" cy="188" r="10" fill="#f8acc0"/>
+    <rect x="16" y="216" width="20" height="26" fill="#160e0b" stroke="#ff2e88" stroke-width="2"/>
+    <rect x="21" y="221" width="10" height="16" fill="#ff8cb9"/>
+    <rect x="-14" y="218" width="8" height="22" fill="#f8acc0"/>
+  </g>
+  <!-- the moon dial beside the path -->
+  <g>
+    <polygon points="268,318 282,238 330,232 330,318" fill="#f8acc0"/>
+    <polygon points="392,318 378,238 330,232 330,318" fill="#34221d"/>
+    <ellipse cx="330" cy="212" rx="88" ry="34" fill="#f8acc0" stroke="#c6d0dc" stroke-width="6"/>
+    <path d="M 268 200 A 66 24 0 0 1 330 190" fill="none" stroke="#160e0b" stroke-width="7"/>
+    <line x1="392" y1="196" x2="404" y2="192" stroke="#ff2e88" stroke-width="6"/>
+    <path d="M 318 196 A 22 12 0 0 1 344 208" fill="none" stroke="#c6d0dc" stroke-width="5"/>
+  </g>
+  <!-- Near band: bench, lantern deposited, log page turned, cat shifts in sleep -->
+  <g>
+    <rect x="700" y="286" width="420" height="14" fill="#5c463c"/>
+    <rect x="716" y="300" width="16" height="46" fill="#46382e"/>
+    <rect x="1088" y="300" width="16" height="46" fill="#46382e"/>
+    <polygon points="760,288 850,278 850,296 760,302" fill="#eee2cd"/>
+    <polygon points="850,278 940,288 940,302 850,296" fill="#e2d4bc"/>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0; 4 2; 0 0" dur="7s" repeatCount="indefinite"/>
+      <ellipse cx="1010" cy="272" rx="42" ry="15" fill="#c48e98"/>
+      <circle cx="1042" cy="264" r="13" fill="#c48e98"/>
+      <polygon points="1034,254 1038,242 1046,254" fill="#c48e98"/>
+      <line x1="1036" y1="264" x2="1048" y2="264" stroke="#1e1511" stroke-width="2"/>
+    </g>
+  </g>
+  <text x="24" y="344" font-family="Alegreya Sans, sans-serif" font-size="15" fill="#f8acc0">Far band: bells hang still. Middle band: the keeper walks once and halts at the dial. Near band: the cat shifts in sleep.</text>
+</svg>
