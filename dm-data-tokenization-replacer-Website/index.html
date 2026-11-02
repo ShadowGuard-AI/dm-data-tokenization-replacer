@@ -1,166 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dm Data Tokenization Replacer: what it is, how it runs, where it stops</title>
-<meta name="description" content="Dm Data Tokenization Replacer is one of my projects. The README in the repo is short, so this page sticks to what the files themselves show.">
-<style>
-:root {
-  --bg: #0a0e1a; --panel: #11182c; --ink: #e9edf5;
-  --mut: #16203b;
-  --acc: #ff8c42; --acc2: #ffc46b;
-  --line: #11182c;
-}
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--ink);
-  font-family: 'Trebuchet MS', sans-serif; line-height: 1.55; }
-code, pre, .mono { font-family: 'Courier New', monospace; }
-a { color: var(--acc2); }
-.hero { padding: 3rem 6vw 1rem; }
-.hero img.banner { width: 100%; height: auto; border: 1px solid var(--line);
-  border-radius: 10px; }
-.logo { width: 92px; height: 92px; border-radius: 18px;
-  border: 1px solid var(--line); }
-h1 { font-size: 2.4rem; margin: 0.4em 0 0.1em; }
-h2 { border-bottom: 2px solid var(--acc); padding-bottom: 0.2em;
-  margin-top: 2em; }
-.lede { font-size: 1.15rem; max-width: 62ch; }
-main { padding: 0 6vw 3rem; max-width: 1180px; margin: 0 auto; }
-.grid { display: grid; gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
-.card { background: var(--panel); border: 1px solid var(--line);
-  border-radius: 12px; padding: 1rem 1.2rem; }
-.card.pop { animation: rise 0.7s ease both; }
-@keyframes rise { from { opacity: 0; transform: translateY(14px); }
-  to { opacity: 1; transform: none; } }
-pre.code { background: #101014; color: #e8e6df; padding: 1rem 1.2rem;
-  border-radius: 12px; overflow-x: auto; font-size: 0.86rem;
-  border-left: 5px solid var(--acc); }
-table { border-collapse: collapse; width: 100%; }
-td, th { border-bottom: 1px solid var(--line); padding: 0.45rem 0.6rem;
-  text-align: left; }
-.shots { display: grid; gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-.shots img { width: 100%; height: auto; border: 1px solid var(--line);
-  border-radius: 10px; background: #f4f1e8; }
-footer { padding: 2rem 6vw; border-top: 1px solid var(--line);
-  color: var(--mut); }
-.rail { display: flex; gap: 1.2rem; align-items: flex-start; }
-.rail nav { position: sticky; top: 1rem; min-width: 180px; }
-@media (max-width: 760px) { .rail { flex-direction: column; }
-  .rail nav { position: static; } }
-@media (prefers-reduced-motion: reduce) {
-  .card.pop { animation: none; } * { scroll-behavior: auto; } }
-</style>
-</head>
-<body class="layout-split">
-<!-- This page exists for dm-data-tokenization-replacer alone: the layout (split-hero),
-     the colors, and the type were picked for this project, not
-     shared with the other project pages. The code block below is
-     copied from the file it names, line for line. If it looks
-     plain, that is because the project is plain, and I would
-     rather the page match the project than dress it up. The one
-     thing I will not do here is oversell: what this project does
-     not do is stated on the page, not hidden from it. -->
-<header class="hero">
-  <img class="logo" src="assets/logo.png" alt="Dm Data Tokenization Replacer logo">
-  <img class="banner" src="assets/banner.png" alt="">
-  <h1>Dm Data Tokenization Replacer</h1>
-  <p class="mono"><a href="https://github.com/ShadowGuard-AI/dm-data-tokenization-replacer">github.com/ShadowGuard-AI/dm-data-tokenization-replacer</a></p>
-</header>
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><title>dm-data-tokenization-replacer: Moon Dial of the Abbey Garden</title>
+<style>@font-face{font-family:Disp;src:url("fonts/Caramel.ttf")}@font-face{font-family:Text;src:url("fonts/AlegreyaSans.ttf")}
+body{background:#241a15;font-family:Text,sans-serif;color:#f3c3d2;margin:0}main{max-width:920px;margin:0 auto;padding:28px}
+h1,h2,h3{font-family:Disp,cursive;color:#f8acc0}section{background:#565e66;padding:18px 22px;margin:16px 0;border:2px solid #c6d0dc;border-left:6px solid #c6d0dc;color:#fbe9ef}
+section.bell{border-left-color:#ff2e88}.marker{color:#ff2e88;font-family:Disp,cursive}img{max-width:100%}
+button{background:#160e0b;color:#f8acc0;border:2px solid #c9a227;padding:12px 22px;font-family:Disp,cursive;border-radius:50%}
+button:hover{color:#ffd9e6;border-color:#e8bc4a}button:active{color:#b06078}button:focus{outline:3px double #c6d0dc;outline-offset:3px}
+a{color:#160e0b}a::before{content:"🐈  ";color:#160e0b}a:hover::before{color:#ff2e88}
+.card{border:1px solid #c6d0dc;padding:14px;margin:10px 0}.notch{border-top:6px solid #ff2e88}
+.label{display:inline-block;border:1px solid #f8acc0;padding:2px 8px;font-size:13px}pre{white-space:pre-wrap;background:#160e0b;color:#f3c3d2;padding:14px}code{font-family:Text,sans-serif}</style></head><body><main>
+<img src="intro-banner.png" alt="Introduction banner: the moon dial at the turning point of the abbey garden, lantern scatter on its chrome rim, sleeping cats, still bells, no writing">
+<h1>dm-data-tokenization-replacer: Moon Dial of the Abbey Garden</h1>
+<p>Wherever this site introduces itself, it uses the joined wording dm-data-tokenization-replacer: Moon Dial of the Abbey Garden, repository wording ahead of theme wording. The page is a night watch log advancing hour past hour, every plate logging its hour ahead of its substance.</p>
+<img src="logo.png" alt="Logo: a squat moon dial pillar, half lit pink and half in coffee black shade, one neon notch, the name lettered underneath"><img src="banner.png" alt="Wordmark banner: abbey garden past midnight, moon dial, lantern, bench with sleeping cat and the open night watch log carrying the name">
+<img src="scene.svg" alt="Animated scene in three bands">
+<div><button type="button">Tokenize the Columns</button></div>
+<p><span class="label">Columns to Tokenize</span></p>
+<h3>The Mapping Is Kept</h3><h3>Detokenize with the Map</h3>
+<section><h2><span class="marker">First hour.</span> Plate one: the job</h2><p>Sensitive data gets replaced using unique, reversible tokens. Tokenization methods multiply: UUIDs, sequential IDs as examples. A token to value mapping gets managed, enabling later de-tokenization. A CSV file arrives as input. The closing line preserves the family sentence concerning tools that generate or mask sensitive data using realistic looking yet meaningless values. No real value, no real token, and no mapping pair from anybody's file is printed on this plate or anywhere on this site. A UUID is carried here as a method name only, never as a concrete token value.</p></section>
+<section class="bell"><h2><span class="marker">Second hour.</span> Plate two: fetching, with one openly declared repair</h2><p><code>git clone https://github.com/ShadowGuard-AI/dm-data-tokenization-replacer</code></p><p>The line above is labelled a correction. The printed README address belongs under a predecessor organisation, so literal followers reach the wrong house. The corrected wording gives the organisation name with its hyphen, wears its correction labelling openly, and is never disguised as original phrasing.</p></section>
+<section><h2><span class="marker">Third hour.</span> Plate three: the invocation silhouette</h2><p><code>./dm-data-tokenization-replacer [params]</code></p><p>The silhouette halts there: program leading, bracketed parameters trailing. The source offers no worked calls and names no input files, so this plate's sample line stays empty instead of fabricating name columns for tokenizing as decoration.</p></section>
+<section><h2><span class="marker">Fourth hour.</span> Plate four: the controls, in README order</h2><p>Help opens: the flag -h, showing the help message, then exiting. Then --tokenize_columns, a list of column names to tokenize. Then --token_method, where the source wording admits no description was provided. Then --token_map_file, where the source wording admits likewise. Then --detokenize closes the queue, detokenizing data using the token map file. The two missing descriptions are repeated here as holes and nobody patches them: method choices stay capped at the UUID plus sequential ID examples the description carries, and the map file format plus its location stay unguessed.</p><div class="card notch"><h3>The Mapping Is Kept</h3><p>Mapping cards earn tiny crescent notches across their top corners, like this one. Every other card stays notch free.</p></div></section>
+<section><h2><span class="marker">Fifth hour.</span> Plate five: the missing guardianship, at full size</h2><p>Kin masking tools print guard paragraphs. This README prints none whatsoever. No paragraph refuses outputs naming inputs. No exit behaviour covers empty files. No exit behaviour covers unchanged files. No rule governs when map files get opened. This plate therefore promises no guards of those species. It also prints this absence at full size: no output control is named anywhere, so where a tokenized CSV goes is learned from the program itself, not from this record. Promised instead: the mapping itself, tokens unique, tokens reversible, a token to value mapping serving as the machinery whereby values later get restored, in the description vocabulary throughout.</p></section>
+<section><h2><span class="marker">Sixth hour.</span> Plate six: two licence candles, flames never merged</h2><p>Candle one: the repository LICENSE itself, MIT terms, its holder sketched by outline only near the head of the governing record: a pen name opening, a bracketed given name compressed toward a single initial following it, a handle in parentheses closing. The complete holder wording is copied nowhere on this page.</p><p>Candle two, wearing site correction labelling: the README closing line respelled using today's hyphenated organisation, the published line having used predecessor naming, reads: Copyright (c) ShadowGuard-AI. Site correction.</p></section>
+<section class="bell"><h2><span class="marker">Seventh hour.</span> Plate seven: the watch change</h2><p>Search engine arrivals get received like relief watchmen: singular handovers, the log read aloud ahead of anybody touching anything. Reversibility hunters receive the mapping handover, unique tokens plus managed token to value mapping plus restoration later, recited gradually and fully. Method hunters receive both named examples, UUIDs plus sequential IDs, alongside an honest acknowledgement: the choosing control carries no description inside the source. Return journey hunters receive the detokenize handover, a solitary flag plus a solitary sentence concerning the token map file, with no embellishment regarding maps the README never displays. Night gardeners, insomniacs browsing documentation during the hours this theme keeps, students, and analysts clutching CSVs facing morning privacy reviews: watch courtesy treats everybody identically, the log recited sequentially, the lantern carried toward exact entries, no whispers beyond the record contents, and no record contents skipped unread inside the darkness.</p></section>
+<section><h2>The preserved README record</h2><pre>![Banner](banner.png)
 
-<main>
-  <section class="rail">
-    <nav aria-label="on this page">
-      <p class="mono"><a href="#run">Run it</a><br>
-      <a href="#files">The files</a><br>
-      <a href="#sheets">The sheets</a><br>
-      <a href="https://github.com/ShadowGuard-AI/dm-data-tokenization-replacer">The repo</a></p>
-    </nav>
-    <div>
-      <p class="lede">Dm Data Tokenization Replacer is one of my projects. The README in the repo is short, so this page sticks to what the files themselves show.</p>
-      <div class="grid">
-        <div class="card pop"><h3>What it is</h3>
-          <p>Dm Data Tokenization Replacer: 5 files, 249 counted
-          lines across Python 229, Markdown 20, Text 0. One job, done in the
-          open, in files you can read.</p></div>
-        <div class="card pop"><h3>The biggest piece</h3>
-          <p><code>main.py</code> carries the most
-          lines. If the project grows, that file is where the growth
-          lands first, for better or worse.</p></div>
-        <div class="card pop"><h3>The honest gap</h3>
-          <p>No test files yet. That is the honest gap, and the roadmap in the visuals folder says what the first one should cover.</p></div>
-      </div>
-      <section id="run">
-        <h2>Run it</h2>
-        <p>The repo README has the exact commands for this one. The
-        shape is the shape for most of my projects: clone it, read the
-        top file first so you know what will happen, then run it on
-        something you do not mind breaking.</p>
-        <p class="mono">$ git clone https://github.com/ShadowGuard-AI/dm-data-tokenization-replacer.git<br>$ cd dm-data-tokenization-replacer</p>
-      </section>
-      
-  <section aria-label="real code">
-    <h2>The code, as it sits in the repo</h2>
-    <p>From <code>main.py</code>, line 10 on. I did
-    not tidy it for the page. What you see is what the file has.</p>
-    <pre class="code"><code>logging.basicConfig(level=logging.INFO, format=&#x27;%(asctime)s - %(levelname)s - %(message)s&#x27;)
+# dm-data-tokenization-replacer
+Replaces sensitive data with unique, reversible tokens. Supports multiple tokenization methods (e.g., UUIDs, sequential IDs) and allows for the management of a token-to-value mapping for later de-tokenization. Takes CSV file as input. - Focused on Tools designed to generate or mask sensitive data with realistic-looking but meaningless values
 
-def setup_argparse():
-    &quot;&quot;&quot;
-    Sets up the argument parser for the command-line interface.
-    &quot;&quot;&quot;
-    parser = argparse.ArgumentParser(
-        description=&quot;Replaces sensitive data in a CSV file with unique, reversible tokens.&quot;
-    )
-    parser.add_argument(&quot;input_file&quot;, help=&quot;The input CSV file.&quot;)
-    parser.add_argument(&quot;output_file&quot;, help=&quot;The output CSV file with tokenized data.&quot;)
-    parser.add_argument(
-        &quot;--tokenize_columns&quot;,
-        nargs=&quot;+&quot;,
-        required=True,
-        help=&quot;A list of column names to tokenize.&quot;
-    )
-    parser.add_argument(
-        &quot;--token_method&quot;,
-        choices=[&quot;uuid&quot;, &quot;sequential&quot;],
-        default=&quot;uuid&quot;,
-        help=&quot;The tokenization method to use (uuid or sequential). Defaults to uuid.&quot;</code></pre>
-  </section>
-      <section id="files">
-        <h2>The files that matter</h2>
-        <table><tr><th>File</th><th>Lines</th></tr>
-        <tr><td><code>main.py</code></td><td>229</td></tr>
-        <tr><td><code>README.md</code></td><td>20</td></tr>
-        <tr><td><code>banner.png</code></td><td>0</td></tr>
-        <tr><td><code>logo.png</code></td><td>0</td></tr>
-        <tr><td><code>requirements.txt</code></td><td>0</td></tr>
-        </table>
-        <p>Names doing the work: <span class="mono">setup_argparse, generate_uuid_token, generate_sequential_token, tokenize_data, detokenize_data, main</span>.</p>
-      </section>
-      <section id="sheets">
-        <h2>Drawn by hand</h2>
-        <p>I sketch my projects on notebook paper so I have to
-        understand them well enough to draw them. The full set,
-        with the counts and how they were counted, is the
-        <a href="https://github.com/ShadowGuard-AI/dm-data-tokenization-replacer/tree/main/dm-data-tokenization-replacer-Visuals">dm-data-tokenization-replacer-Visuals</a>
-        folder in the repo. Nothing is drawn over the binder holes.
-        That is a rule, not a style.</p>
-        <div class="shots">
-          <img src="assets/architecture.png" alt="Hand drawn architecture sheet for Dm Data Tokenization Replacer">
-          <img src="assets/flowchart.png" alt="Hand drawn flowchart sheet for Dm Data Tokenization Replacer">
-          <img src="assets/product-map.png" alt="Hand drawn product map sheet for Dm Data Tokenization Replacer">
-        </div>
-      </section>
-    </div>
-  </section>
-</main>
-<footer>
-  <p>Dm Data Tokenization Replacer is one of my projects. This page was written
-  from the repo itself on 2026-10-30: the counts are the
-  repo's counts, the code is the repo's code, and the gaps are the
-  repo's gaps.</p>
-</footer>
-</body>
-</html>
+## Install
+`git clone https://github.com/ShadowStrikeHQ/dm-data-tokenization-replacer`
+
+## Usage
+`./dm-data-tokenization-replacer [params]`
+
+## Parameters
+- `-h`: Show help message and exit
+- `--tokenize_columns`: A list of column names to tokenize.
+- `--token_method`: No description provided
+- `--token_map_file`: No description provided
+- `--detokenize`: Detokenize the data using the token map file.
+
+## License
+Copyright (c) ShadowStrikeHQ</pre></section>
+</main></body></html>
