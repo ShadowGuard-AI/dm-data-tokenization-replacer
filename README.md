@@ -18,36 +18,38 @@ Replaces sensitive data with unique, reversible tokens. Supports multiple tokeni
 ![Major separator](sep-heavy.svg)
 
 ## Install
-`git clone https://github.com/ShadowStrikeHQ/dm-data-tokenization-replacer`
+`git clone https://github.com/ShadowGuard-AI/dm-data-tokenization-replacer`
 
-> Night watch log entry: the README clone line names a predecessor organisation. It stands here exactly as written.
+> Night watch log entry, corrected in this wave: the clone line formerly named a predecessor organisation; it now names ShadowGuard-AI.
 
 ![Minor separator](sep-light.svg)
 
 ## Usage
-`./dm-data-tokenization-replacer [params]`
+`python3 main.py INPUT_FILE OUTPUT_FILE --tokenize_columns COL [COL ...] [options]`
 
 ![Minor separator](sep-light.svg)
 
 ## Parameters
+- `input_file`: The input CSV file. Required.
+- `output_file`: The output CSV file with tokenized data. Required.
 - `-h`: Show help message and exit
-- `--tokenize_columns`: A list of column names to tokenize.
-- `--token_method`: No description provided
-- `--token_map_file`: No description provided
+- `--tokenize_columns`: A list of column names to tokenize, one or more. Required.
+- `--token_method`: The tokenization method to use. Choices: uuid, sequential. Defaults to uuid.
+- `--token_map_file`: The file to store the token-to-value mapping (CSV). Defaults to token_map.csv.
 - `--detokenize`: Detokenize the data using the token map file.
 
 > Night watch log entry: tokens are unique and reversible.
 
 > Night watch log entry: a token to value mapping is kept for later de-tokenization.
 
-> Night watch log entry: the method control carries no description.
+> Night watch log entry, corrected in this wave: the method control formerly carried no description; it now carries its uuid and sequential choices and uuid default.
 
-> Night watch log entry: the map file control carries no description.
+> Night watch log entry, corrected in this wave: the map file control formerly carried no description; it now carries its CSV purpose and token_map.csv default.
 
 ![Minor separator](sep-light.svg)
 
 ## License
-Copyright (c) ShadowStrikeHQ
+This project is released under the license in the [LICENSE](LICENSE) file. See LICENSE for details.
 
 ![Major separator](sep-heavy.svg)
 
@@ -57,4 +59,4 @@ The main button of this re-skin reads Tokenize the Columns. Its columns field la
 
 ## Detokenize with the Map
 
-What the record does not say, printed at full size as absences. No output control is named anywhere in this README, so where a tokenized CSV goes is not stated here. There is no guard paragraph at all: no refusal, no exit behaviour for any case, and no rule for when map files get opened. The map file format and its location are undescribed: the two controls above carry the words No description provided, and nothing here fills those holes in. It ends with the moon dial framed in the final lit window, the watch discharged, and the garden dark and quiet.
+An output control is now named in the parameter list: output_file, the output CSV file, required. The guard paragraph absence below still stands: no refusal or exit behaviour for any case is stated in this README.
