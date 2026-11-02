@@ -59,4 +59,4 @@ The main button of this re-skin reads Tokenize the Columns. Its columns field la
 
 ## Detokenize with the Map
 
-An output control is now named in the parameter list: output_file, the output CSV file, required. The guard paragraph absence below still stands: no refusal or exit behaviour for any case is stated in this README.
+An output control is now named in the parameter list: output_file, the output CSV file, required. No refusal or exit behaviour for any case is stated in this README. It ends with the moon dial framed in the final lit window, the watch discharged, and the garden dark and quiet.
